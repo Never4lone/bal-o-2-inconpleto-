@@ -2,9 +2,10 @@
 //Declare a variável para PLAY e END
 //inicialize o valor para a variável
 //Atribua o valor de gameState como PLAY
+var PLAY=0;
+var END=1;
 var gameState = PLAY;
-var PLAY;
-var END;
+
 
 var bow , arrow,  background, redB, pinkB, greenB ,blueB ,arrowGroup;
 var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImage ,blue_balloonImage, backgroundImage;
@@ -66,9 +67,11 @@ function draw() {
     createArrow();
     
   }
-  
+}
+
  if (gameState === END){
-    background.velocityX=0
+    scene.velocityX=0
+    bow.destroy();
     if (keyDown("p")){
       gameState=PLAY;
     }
@@ -95,7 +98,7 @@ function draw() {
     redB.destroyEach();
     gameState=END; 
 }
-  }
+  
  
  //escreva uma condição para o estado END
  //Adicione o código para destruir o arco
